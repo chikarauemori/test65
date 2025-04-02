@@ -275,16 +275,14 @@ method="post"
       .then((profile) => {
         const userId = profile.userId; // ユーザーIDを取得
 
-        // ユーザーIDを非表示のinputフィールドとしてフォームに追加
-        const userIdField = document.createElement("input");
-        userIdField.type = "hidden"; // 見えないフィールドとして設定
-        userIdField.name = "userId"; // サーバー側で受け取る名前を指定
-        userIdField.value = userId; // ユーザーIDの値をセット
-
-        // フォームにuserIdフィールドを追加
-        document.getElementById("userForm1").appendChild(userIdField);
-        document.getElementById("userForm2").appendChild(userIdField);
-        document.getElementById("userForm3").appendChild(userIdField);
+// 同じinput要素を使い回すのではなく、複数のフォームに別々のhiddenフィールドを追加したい場合
+["userForm1", "userForm2", "userForm3"].forEach(formId => {
+  const userIdField = document.createElement("input");
+  userIdField.type = "hidden";
+  userIdField.name = "userId";
+  userIdField.value = userId;
+  document.getElementById(formId).appendChild(userIdField);
+});
 
         // 必要に応じてボタンのテキストを変更する
         const submitButton = document.querySelector("button");
