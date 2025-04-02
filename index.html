@@ -116,7 +116,7 @@
 <h2>スタンプラリーカード</h2>
 <h3>現在の獲得スタンプ数を確認できます！</h3>
 <form
-  id="userForm"
+  id="userForm1"
   action="https://script.google.com/macros/s/AKfycby5l87fl2ZxKaRSskaNO0qJy-fS_aPjEZJlgGx2oH9-GHSX9br0xM1E9n2Ru-SYm4KO2g/exec"
   method="post"
 >
@@ -125,7 +125,7 @@
 </form>
 <h2>ユーザー登録</h2>
 <form
-      id="userForm"
+      id="userForm2"
       action="https://script.google.com/macros/s/AKfycbz7tQTqCiiau4aD4asjUXF33i76AerzeRjGItg238-Mlz1LWSVPgfLROS4E6FXOlGbGZA/exec"
       method="post"
       class="h-adr"
@@ -239,7 +239,7 @@
 </form>
 
 <form
-id="userForm"
+id="userForm3"
 action="https://script.google.com/macros/s/AKfycbwDtL30-poz7VwxlaJcHTydg_2KmMMaJt9m1Axak7r37LjzMTDRZsjeTHa845LdwtUG/exec"
 method="post"
 >
@@ -282,7 +282,9 @@ method="post"
         userIdField.value = userId; // ユーザーIDの値をセット
 
         // フォームにuserIdフィールドを追加
-        document.getElementById("userForm").appendChild(userIdField);
+        document.getElementById("userForm1").appendChild(userIdField);
+        document.getElementById("userForm2").appendChild(userIdField);
+        document.getElementById("userForm3").appendChild(userIdField);
 
         // 必要に応じてボタンのテキストを変更する
         const submitButton = document.querySelector("button");
